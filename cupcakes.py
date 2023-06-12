@@ -20,6 +20,7 @@ german_chocolate = Cupcake('German Chocolate', 4.99, 'german chocolate', 'coconu
 
 german_chocolate.filling = 'chocolate'
 
-german_chocolate.add_sprinkles('coconut flakes')
+german_chocolate.add_sprinkles('coconut flakes','chocolate shavings')
 
 print(german_chocolate.sprinkles)
+print(german_chocolate.filling)
