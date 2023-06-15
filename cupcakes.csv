@@ -1,0 +1,5 @@
+size,name,price,flavor,frosting,sprinkles,filling
+mini,German Chocolate,2.99,german chocolate,coconut pecan,"['coconut flakes', 'chocolate shavings']",
+monster,Cookie Monster,27.99,Chocolate,Cream Cheese,['Oreo pieces'],Chocolate Fudge
+mini,Mini Chocolate,1.99,chocolate,chocolate,[],
+monster,Monster Vanilla,20.99,vanilla,vanilla,[],custard
