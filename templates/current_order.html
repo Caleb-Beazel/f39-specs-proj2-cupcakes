@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/stylesheet.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Order</h2>
+    {% for item in order %}
+    <h3>{{ item['name'] }}</h3>
+    <h4><b>Price: ${{ item['price'] }} </b></h4>
+    <br><br>
+    {% endfor %}
+
+    <h2>Order Total: ${{order_total}}</h2>
+</body>
+</html>

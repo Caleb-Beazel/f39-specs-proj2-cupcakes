@@ -61,19 +61,6 @@ class Monster(Cupcake):
     
 monster_vanilla = Monster("Monster Vanilla", 20.99, "vanilla", "vanilla", "custard")
 
-# german_chocolate = Cupcake('German Chocolate', 4.99, 'german chocolate', 'coconut pecan', None)
-
-# german_chocolate.filling = 'chocolate'
-
-# german_chocolate.add_sprinkles('coconut flakes','chocolate shavings')
-
-# print(german_chocolate.sprinkles)
-# print(german_chocolate.filling) 
-
-
-# print(mini_chocolate.size)
-# print(mini_chocolate.price)
-# print(monster_vanilla.filling)
 german_chocolate = Mini('German Chocolate', 2.99, 'german chocolate', 'coconut pecan')
 german_chocolate.add_sprinkles('coconut flakes','chocolate shavings')
 cookie_monster = Monster("Cookie Monster",27.99, "Chocolate", "Cream Cheese", "Chocolate Fudge")
@@ -138,3 +125,29 @@ def add_cupcakes_to_csv(file, cupcakes):
                     "frosting": cupcake.frosting,
                     "sprinkles": cupcake.sprinkles
                 })
+lil_red = Mini('Lil Red', 2.99, 'red velvet', 'Cream Cheese')
+monster_mint = Monster("Monster Mint",27.99, "Chocolate", "Mint", "Chocolate Fudge")
+
+cupcakes_list2 = [
+    lil_red,
+    monster_mint
+]
+# add_cupcakes_to_csv("cupcakes.csv", cupcakes_list2)
+
+def get_cupcakes(file):
+    with open(file) as csvfile:
+        reader = csv.DictReader(csvfile)
+        reader = list(reader)
+        return reader
+    
+def find_cupcake(file, name):
+    for cupcake in get_cupcakes(file):
+        if cupcake["name"] == name:
+            return cupcake
+    return None
+
+def add_cupcake_dictionary(file, cupcake):
+    with open(file, "a", newline="\n") as csvfile:
+        fieldnames = ["size", "name", "price", "flavor", "frosting", "sprinkles", "filling"]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writerow(cupcake)
